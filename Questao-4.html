@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Pedro Cardoso">
+    <title>Cálculo de IMC</title>
+    <script>
+        function calculaIMC() {
+            let peso = parseFloat(document.getElementById("peso").value);
+            let altura = parseFloat(document.getElementById("altura").value);
+            let resultado = document.getElementById("resultado");
+            resultado.innerHTML = "";
+
+            if (peso <= 0 || altura <= 0) {
+                alert("Por favor, preencha os campos com números válidos");
+                return false;
+            } else {
+                let imc = peso / (altura * altura)
+                if (imc < 18.5) {
+                    resultado.innerHTML += "Seu IMC é " + imc.toFixed(2) + " <br> Categoria : Abaixo do Peso";
+                } else if (imc >= 18.5 && imc < 25) {
+                    resultado.innerHTML += "Seu IMC é " + imc.toFixed(2) + " <br> Categoria : Peso Normal";
+                } else if (imc >= 25 && imc < 30) {
+                    resultado.innerHTML += "Seu IMC é " + imc.toFixed(2) + " <br> Categoria : Sobrepeso";
+                } else if (imc >= 30 && imc < 35) {
+                    resultado.innerHTML += "Seu IMC é " + imc.toFixed(2) + " <br> Categoria : Obesidade Grau I";
+                } else if (imc >= 35 && imc < 40) {
+                    resultado.innerHTML += "Seu IMC é " + imc.toFixed(2) + " <br> Categoria : Obesidade Grau II";
+                } else {
+                    resultado.innerHTML += "Seu IMC é " + imc.toFixed(2) +  " <br> Categoria : Obesidade Grau III";
+                }
+                return false;
+            }
+        }
+    </script>
+
+    <style>
+        * {
+            color: rgb(50, 46, 46);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(254, 188, 247);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .formulario {
+            width: 540px;
+            background-color: rgb(254, 188, 247);
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+        }
+
+        .titulo {
+            font-weight: 750;
+        }
+
+        .formulario label {
+            font-weight: 700;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .formulario input {
+            width: 200px;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 2px solid black;
+            text-align: center;
+        }
+        
+        .formulario button {
+            width: 200px;
+            height: 50px;
+            margin: auto;
+            display: block;
+            background-color: rgb(248, 172, 172);
+            border-radius: 8px;
+            border: 2px solid black;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="formulario">
+            <h1 class="titulo">
+                Calculadora de IMC
+            </h1>
+            <form name="form" onsubmit="return calculaIMC()">
+                <label for="peso">Peso (kg):</label>
+                <input type="number" id="peso" step="0.01" required> <br> <br>
+
+                <label for="altura">Altura (m):</label>
+                <input type="number" id="altura" step="0.01" required> <br> <br>
+
+                <button>Calcular IMC</button>
+            </form>
+            <p id="resultado"></p>
+        </div>
+    </div>
+</body>
+</html>
