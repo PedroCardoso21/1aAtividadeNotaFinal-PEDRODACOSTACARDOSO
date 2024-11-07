@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Perfil</title>
+    <style>
+        * {
+            color: black;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            background-color: gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .perfil {
+            width: 540px;
+            background-color: gray;
+            border-radius: 16px;
+            padding-top: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .imgPerfil {
+            width: 150px;
+            border-radius: 50%;
+            border: rgb(92, 91, 91)5px solid;
+        }
+
+        h1.nome {
+            margin: 0;
+        }
+
+        h3.descricao {
+            font-weight: 650;
+        }
+
+        .redes {
+            margin: 15px ;
+        }
+
+        .redes a {
+            margin-right: 40px;
+        }
+
+        .redes img {
+            width: 50px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="perfil">
+            <img src="Imagens/perfil.jpg" alt="Imagem Perfil" class="imgPerfil">
+
+            <div class="texto">
+                <h1 class="nome">
+                    Pedro Cardoso
+                </h1>
+                <h3 class="descricao">
+                    Desenvolvedor Back-End <b>Java</b> <br> <br>
+
+                    Desde a infância sou apaixonado por tecnologia, pois sempre tive contato com esse mundo através de jogos. A área que mais me identifico é a de Back-end, sendo Java a minha linguagem principal, porém até encontrar a área na qual escolhi, estudei sobre diversos assuntos, como: <br> HTML, CSS, JavaScript, SQL e Python.
+                    <br> <br>
+                    Acredito que possuir conhecimentos nessas tecnologias me fizeram ter mais facilidade para aprender sobre Java e escolher a área de Desenvolvimento de Software. No meu Github, estão fixados dois repositórios, nos quais estão registrados os meus estudos em Java e também exercícios que concluí até o momento
+                </h3>
+            </div>
+
+            <div class="redes">
+                <a href="https://github.com/pedrocardoso21" target="_blank">
+                    <img src="Imagens/github.png" alt="github">
+                </a>
+
+                <a href="https://linkedin.com/in/pedrocardoso21" target="_blank">
+                    <img src="Imagens/linkedin.png" alt="linkedin">
+                </a>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>
